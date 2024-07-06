@@ -6,7 +6,10 @@
     "crm": {
       "projectType": "application",
       "schematics": {
-        "skipTests": true
+        "@schematics/angular:component": {
+          "style": "css",
+          "skipTests": true
+        }
       },
       "root": "",
       "sourceRoot": "src",

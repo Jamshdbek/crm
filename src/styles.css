@@ -1,5 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.img_card{
+  width: 100px;
+}
+/* styles.css */
+.mat-sort-header-container {
+  color: #b1b1b1;
+}
+.mat-sort-header-arrow {
+  opacity: 1 !important; /* Make the sort icon always visible */
+}
+
+.mat-sort-header-arrow {
+  opacity: 1 !important; /* Make the sort icon always visible */
+}
+
+.mat-sort-header-sorted {
+  color: inherit !important; /* Ensure the icon inherits the text color when sorted */
+}
