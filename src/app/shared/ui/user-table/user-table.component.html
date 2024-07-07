@@ -3,16 +3,16 @@
   [dataSource]="dataSource"
   matSort
   (matSortChange)="announceSortChange($event)"
-  class="mat-elevation-z8 shadow-none border-none"
+  class="mat-elevation-z8 shadow-none border-none min-w-full"
 >
   <!-- Name Column -->
-  <ng-container matColumnDef="position">
+  <ng-container matColumnDef="position" class=" flex name min-h-[10vw]">
     <th
       mat-header-cell
       *matHeaderCellDef
       mat-sort-header
       sortActionDescription="Sort by number"
-      class="shadow-none"
+      class="shadow-none text-red-600 "
     >
       Name
     </th>

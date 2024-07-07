@@ -12,6 +12,7 @@ body {
 /* styles.css */
 .mat-sort-header-container {
   color: #b1b1b1;
+  min-width: 30vh;
 }
 .mat-sort-header-arrow {
   opacity: 1 !important; /* Make the sort icon always visible */

@@ -1,0 +1,13 @@
+@if (item){
+<div
+  class="pt-[10px] flex gap-2 items-stretch justify-between px-[10px] my-4 hover:bg-white rounded-md cursor-pointer"
+>
+  <div class="flex gap-5 items-stretch">
+    <img [src]="item?.icon" alt="" width="22px" class="mb-[10px]" />
+    <p class="text-[#757D8A]">{{ item?.name }}</p>
+  </div>
+  <div>
+    <img src="assets/icons/menu.svg" alt="" />
+  </div>
+</div>
+}

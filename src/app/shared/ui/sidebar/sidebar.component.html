@@ -1,1 +1,6 @@
-<div>Sidtebar</div>
+<div class="w-[40vh] bg-[#F1F2F6] min-h-full p-[20px] fixed">
+  <app-profile></app-profile>
+  @for (item of menuData; track $index) {
+  <app-menu-card [item]="item"></app-menu-card>
+  }
+</div>
