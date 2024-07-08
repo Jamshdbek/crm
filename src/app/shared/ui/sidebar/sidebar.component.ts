@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProfileComponent } from '../profile/profile.component';
 import { MenuCardComponent } from '../menu-card/menu-card.component';
 import { menu } from '../../constants/menu';

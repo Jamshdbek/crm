@@ -43,3 +43,26 @@ export const menu = [
     icon: 'assets/icons/cripto.svg',
   },
 ];
+
+export const statistic = [
+  {
+    title: 'Total Budget',
+    count: ' $85,125.00',
+    color: '#F8F8F8',
+  },
+  {
+    title: 'Monthly Budget',
+    count: ' $85,125.00',
+    color: '#5B6AD0',
+  },
+  {
+    title: 'Weekly Budget ',
+    count: "$85,125.00",
+    color: '#F8F8F8',
+  },
+  {
+    title: 'Todays Budger',
+    count: ' $85,125.00',
+    color: '#F8F8F8',
+  },
+];

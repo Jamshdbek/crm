@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { UserTableComponent } from '../../shared/ui/user-table/user-table.component';
+import { statistic } from '../../shared/constants/menu';
+import { StatisticsType } from '../../shared/types/global';
 
 @Component({
   selector: 'app-data-table',
@@ -8,4 +10,6 @@ import { UserTableComponent } from '../../shared/ui/user-table/user-table.compon
   templateUrl: './data-table.component.html',
   styleUrl: './data-table.component.css',
 })
-export class DataTableComponent {}
+export class DataTableComponent {
+  statisticData: StatisticsType[] = statistic;
+}

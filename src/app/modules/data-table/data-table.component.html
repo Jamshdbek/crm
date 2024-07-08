@@ -1,22 +1,23 @@
 <div class="w-full">
-  <header
-    class="w-full flex items-stretch justify-between min-h-[10vh] pt-[8vh] flex-col"
-  >
-    <p class="font-[700S] text-[20px]">Data Table</p>
-    <div>
-      <input type="text" />
-      <button>test</button>
-      <button>test</button>
+  <div class="flex items-center justify-between px-[4vh] py-[66px]">
+    <p class="text-[#404D61] font-[700] text-[28px]">Data Table</p>
+    <div></div>
+  </div>
+  <hr />
+  <div class="px-[4vh] py-[30px]">
+    <div class="line-clamp-2">
+      <p class="text-[#404D61] text-[24px] font-[500]">Employee</p>
+      <p class="text-[#757D8A] text-[16px] font-[400]">18 results found</p>
     </div>
-    <hr />
-  </header>
-  <div class="min-h-[30vh]">
-    <div>
-      <div>
-        <h4>Employee</h4>
-        <p>18 results found</p>
-      </div>
+  </div>
+  <!-- CARD -->
+  <div class="px-[4vh] grid grid-cols-4 mb-2">
+    @if (statisticData) { @for (item of statisticData; track $index) {
+    <div class="bg-[#F8F8F8] w-[16vw] h-[10vw] pl-[4%] pt-[2%] rounded-[10px]">
+      <p class="text-[]">{{ item?.title }}</p>
+      <p class="text-[22px] font-[700] text-[#404D61]">{{ item?.count }}</p>
     </div>
+    } }
   </div>
   <app-user-table></app-user-table>
 </div>
