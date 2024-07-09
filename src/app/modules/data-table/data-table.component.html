@@ -1,5 +1,5 @@
 <div class="w-full">
-  <div class="flex items-center justify-between px-[4vh] py-[66px]">
+  <div class="flex items-center justify-between px-[4vh] py-[45px] mt-[20px]">
     <p class="text-[#404D61] font-[700] text-[28px]">Data Table</p>
     <div></div>
   </div>
@@ -13,9 +13,17 @@
   <!-- CARD -->
   <div class="px-[4vh] grid grid-cols-4 mb-2">
     @if (statisticData) { @for (item of statisticData; track $index) {
-    <div class="bg-[#F8F8F8] w-[16vw] h-[10vw] pl-[4%] pt-[2%] rounded-[10px]">
-      <p class="text-[]">{{ item?.title }}</p>
-      <p class="text-[22px] font-[700] text-[#404D61]">{{ item?.count }}</p>
+    <div
+      [style.background-color]="item?.color"
+      class="bg-[#F8F8F8] w-[16vw] h-[10vw] pl-[8%] pt-[8%] rounded-[10px]"
+    >
+      <p [style.color]="item?.text_color">{{ item?.title }}</p>
+      <p
+        [style.color]="item?.text_color"
+        class="text-[22px] font-[700] text-[#404D61]"
+      >
+        {{ item?.count }}
+      </p>
     </div>
     } }
   </div>

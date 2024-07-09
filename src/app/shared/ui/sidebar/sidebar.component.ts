@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
-  private router = inject(Router);
   menuData = menu;
+  private router = inject(Router);
   logout(): void {
     this.router.navigate([Path.LOGIN]);
   }

@@ -6,13 +6,15 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-.img_card{
+.img_card {
   width: 100px;
 }
+
 /* styles.css */
 .mat-sort-header-container {
   color: #b1b1b1;
   min-width: 30vh;
+  background-color: #ffffff;
 }
 .mat-sort-header-arrow {
   opacity: 1 !important; /* Make the sort icon always visible */
@@ -21,7 +23,14 @@ body {
 .mat-sort-header-arrow {
   opacity: 1 !important; /* Make the sort icon always visible */
 }
-
+::ng-deep .mat-row,
+::ng-deep .mat-header-row {
+  border-bottom: none !important;
+}
 .mat-sort-header-sorted {
-  color: inherit !important; /* Ensure the icon inherits the text color when sorted */
+  background-color: #ffffff !important;
+
+  color: inherit !important;
+  border: none;
+  /* Ensure the icon inherits the text color when sorted */
 }

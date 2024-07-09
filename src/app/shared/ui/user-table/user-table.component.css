@@ -1,3 +1,28 @@
-.name{
-    min-width: 90000px;
+.table-row-even {
+  background-color: #ffffff;
+}
+
+.table-row-odd {
+  background-color: #f8f8f8;
+}
+tbody{
+  border-bottom: none !important;
+  padding-left: 20px !important;
+}
+thead{
+  background-color: #ffffff !important;
+}
+.mdc-data-table__row {
+  border-bottom: none !important;
+}
+th{
+  background-color: #ffffff !important;
+  padding-left: 30px;
+}
+td{
+  padding-left: 30px;
+
+}
+::ng-deep .mat-header-row {
+  background-color: white;
 }

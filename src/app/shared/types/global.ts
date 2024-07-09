@@ -8,4 +8,5 @@ export interface StatisticsType {
   title: string;
   count: string;
   color: string;
+  text_color:string;
 }

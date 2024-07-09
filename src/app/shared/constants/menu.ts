@@ -49,20 +49,24 @@ export const statistic = [
     title: 'Total Budget',
     count: ' $85,125.00',
     color: '#F8F8F8',
+    text_color: '#404D61',
   },
   {
     title: 'Monthly Budget',
     count: ' $85,125.00',
     color: '#5B6AD0',
+    text_color: 'white',
   },
   {
     title: 'Weekly Budget ',
-    count: "$85,125.00",
+    count: '$85,125.00',
     color: '#F8F8F8',
+    text_color: '#404D61',
   },
   {
     title: 'Todays Budger',
     count: ' $85,125.00',
     color: '#F8F8F8',
+    text_color: '#404D61',
   },
 ];
