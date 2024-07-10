@@ -12,6 +12,6 @@ import { Path } from '../../shared/constants/path';
 export class LoginPageComponent {
   private router = inject(Router);
   login(): void {
-    this.router.navigate([Path.DATA_TABLE]);
+    this.router.navigate([""]);
   }
 }
