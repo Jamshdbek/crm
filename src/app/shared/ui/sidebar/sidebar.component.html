@@ -1,16 +1,16 @@
-<div class="w-[40vh] bg-[#F1F2F6] min-h-full p-[20px] fixed">
+<div class="w-[40vh] bg-[#F1F2F6] min-h-full p-[20px] fixed flex flex-col">
   <app-profile></app-profile>
-  @for (item of menuData; track $index) {
-  <app-menu-card [item]="item"></app-menu-card>
-  }
+  <div class="flex-grow">
+    @for (item of menuData; track $index) {
+    <app-menu-card [item]="item"></app-menu-card>
+    }
+  </div>
   <div
-    class="pt-[10px] flex gap-2 items-end float-start mt-[100px] justify-between px-[10px] my-4 rounded-md cursor-pointer "
+    class="pt-[20px] flex gap-2 items-end justify-between px-[10px] mt-4 rounded-md cursor-pointer"
   >
     <button class="flex gap-5 items-stretch" (click)="logout()">
       <img src="assets/icons/off.svg" alt="" width="22px" class="mb-[10px]" />
-      <p class="text-[#757D8A]  ">
-        Sign Out
-      </p>
+      <p class="text-[#757D8A]">Sign Out</p>
     </button>
   </div>
 </div>
