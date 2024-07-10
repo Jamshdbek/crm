@@ -6,8 +6,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `/shared` -  global resource file used in the project <br/>
 `- /ui` - design components in all projects <br/>
-`- /constants` - enums and default url path systems
-`- /types` - global tyies
+`- /constants` - enums and default url path systems <br/>
+`- /types` - global tyies sourse
+
+`/modules` -  is project all sourse pages <br/>
+
+`/state` -  ngrx file sourse <br/>
+
+`/layout` -  router outlets<br/>
+
+
+
 
 
 ## Development server
