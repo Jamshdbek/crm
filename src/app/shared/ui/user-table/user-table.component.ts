@@ -1,71 +1,15 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { UserCardComponent } from '../user-card/user-card.component';
-export interface PeriodicElement {
-  name: string;
-  img: string;
-  weight: number;
-  symbol: string;
-}
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    img: 'assets/user-images/user-1.svg',
-    name: 'Hydrogen',
-    weight: 1.0079,
-    symbol: 'H',
-  },
-  {
-    img: 'assets/user-images/user-2.svg',
-    name: 'Helium',
-    weight: 4.0026,
-    symbol: 'He',
-  },
-  {
-    img: 'assets/user-images/user-3.svg',
-    name: 'Lithium',
-    weight: 6.941,
-    symbol: 'Li',
-  },
-  {
-    img: 'assets/user-images/user-4.svg',
-    name: 'Beryllium',
-    weight: 9.0122,
-    symbol: 'Be',
-  },
-  {
-    img: 'assets/user-images/user-5.svg',
-    name: 'Boron',
-    weight: 10.811,
-    symbol: 'B',
-  },
-  {
-    img: 'assets/user-images/user-6.svg',
-    name: 'Carbon',
-    weight: 12.0107,
-    symbol: 'C',
-  },
-  {
-    img: 'assets/user-images/user-7.svg',
-    name: 'Nitrogen',
-    weight: 14.0067,
-    symbol: 'N',
-  },
-  {
-    img: 'assets/user-images/user-8.svg',
-    name: 'Oxygen',
-    weight: 15.9994,
-    symbol: 'O',
-  },
-  {
-    img: 'assets/user-images/user-9.svg',
-    name: 'Fluorine',
-    weight: 18.9984,
-    symbol: 'F',
-  },
-];
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../state/app.state';
+import { Observable } from 'rxjs';
+import { selectUsersData } from '../../../state/users/users.selector';
+import { UserItem } from '../../types/users.type';
+
 @Component({
   selector: 'app-user-table',
   standalone: true,
@@ -80,11 +24,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrl: './user-table.component.css',
 })
 export class UserTableComponent {
-  displayedColumns: string[] = ['img', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  public displayedColumns: string[] = ['name', 'email', 'status', 'role'];
+  private usersData$?: Observable<UserItem[]> =
+    this.store.select(selectUsersData);
+  public dataSource = new MatTableDataSource();
   //  sort details
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
-
+  constructor(
+    private _liveAnnouncer: LiveAnnouncer,
+    private store: Store<AppState>
+  ) {
+    console.log(this.usersData$, 'user this');
+    this.usersData$?.subscribe((data) => {
+      this.dataSource.data = data;
+    });
+  }
   @ViewChild(MatSort) sort: MatSort = new MatSort();
 
   ngAfterViewInit() {

@@ -8,6 +8,7 @@ import { canActivateAuth } from './modules/auth/access.guard';
 export const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     component: LayoutComponent,
     children: [
       {
