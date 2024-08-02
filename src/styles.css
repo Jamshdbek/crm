@@ -9,7 +9,15 @@ body {
 .img_card {
   width: 100px;
 }
-
+.custom-dialog-backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+}
+.custom-dialog {
+  border-radius: 8px !important;
+  background-color: #ffffff;
+}
 /* styles.css */
 .mat-sort-header-container {
   color: #b1b1b1;

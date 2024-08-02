@@ -1,13 +1,12 @@
 <div class="w-full">
-  <div class="flex items-center justify-between px-[4vh] py-[45px] mt-[20px]">
-    <p class="text-[#404D61] font-[700] text-[28px]">Data Table</p>
-    <div></div>
-  </div>
+  <app-search (searchTextChanged)="setSearchText($event)"></app-search>
   <hr />
   <div class="px-[4vh] py-[30px]">
     <div class="line-clamp-2">
       <p class="text-[#404D61] text-[24px] font-[500]">Employee</p>
-      <p class="text-[#757D8A] text-[16px] font-[400]">18 results found</p>
+      <p class="text-[#757D8A] text-[16px] font-[400]">
+        {{ usersCount() }} results found
+      </p>
     </div>
   </div>
   <!-- CARD TABLE -->
@@ -27,5 +26,9 @@
     </div>
     } }
   </div>
-  <app-user-table></app-user-table>
+  <!-- USER TABLE -->
+  <app-user-table
+    [usersData]="usersData"
+    (userDeleteId)="userDeleteId($event)"
+  ></app-user-table>
 </div>

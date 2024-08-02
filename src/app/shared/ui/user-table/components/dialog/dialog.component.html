@@ -1,0 +1,16 @@
+<h2 mat-dialog-title class="custom-dialog-title">Confirm Action</h2>
+<mat-dialog-content class="custom-dialog-content">
+  <mat-label>email</mat-label>
+  <input type="text">
+  <br>
+  <input type="text">
+  <br>
+  <input type="text">
+  <br>
+</mat-dialog-content>
+<mat-dialog-actions class="custom-dialog-actions">
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="formItem()" cdkFocusInitial>
+    Edit
+  </button>
+</mat-dialog-actions>

@@ -59,7 +59,13 @@
     >
       Role
     </th>
-    <td mat-cell *matCellDef="let element">{{ element.role }}</td>
+    <td mat-cell *matCellDef="let element">
+      {{ element.role }}
+      <button style="border: solid" (click)="deleteUserByEmail(element.email)">
+        Delete
+      </button>
+      <button mat-raised-button (click)="openDialog(element)">Update</button>
+    </td>
   </ng-container>
   <!--  tr header functalalty -->
   <tr

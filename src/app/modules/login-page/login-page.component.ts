@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import {
   FormBuilder,
@@ -10,7 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../auth/services/auth.service';
 @Component({
   selector: 'app-login-page',
@@ -20,7 +25,8 @@ import { AuthService } from '../auth/services/auth.service';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-      MatButtonModule, MatIconModule
+    MatButtonModule,
+    MatIconModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './login-page.component.html',
@@ -34,6 +40,7 @@ export class LoginPageComponent {
   //   username: new FormGroup(null),
   //   password: new FormGroup(null),
   // });
+  // for password is show method
   hide = signal(true);
   clickEvent(event: MouseEvent) {
     this.hide.set(!this.hide());
@@ -43,8 +50,8 @@ export class LoginPageComponent {
     username: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });
+  //  handle Submitting
   onSubmit(): void {
-    console.log(this.form.value)
-    // this.router.navigate(['']);
+    console.log(this.form.value);
   }
 }

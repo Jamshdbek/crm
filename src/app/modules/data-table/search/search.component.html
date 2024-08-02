@@ -1,0 +1,11 @@
+<div class="flex items-center justify-between px-[4vh] py-[45px] mt-[20px]">
+  <p class="text-[#404D61] font-[700] text-[28px]">Data Table</p>
+  <!-- <form onsubmit="onSubmit()"> -->
+    <div [formGroup]="searchForm">
+
+      <div><input class="border" formControlName="searchText" /></div>
+      <button (click)="onSearchTextChanged()">Search</button>
+    </div>
+    <!-- <button type="submit">search</button> -->
+  <!-- </form> -->
+</div>

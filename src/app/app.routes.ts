@@ -12,7 +12,7 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path:"",
+        path: '',
         component: DataTableComponent,
       },
     ],
