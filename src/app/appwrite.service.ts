@@ -38,5 +38,4 @@ export class AppwriteService {
     }
   }
 
-  // Additional Appwrite functions as needed
 }

@@ -60,11 +60,19 @@
       Role
     </th>
     <td mat-cell *matCellDef="let element">
-      {{ element.role }}
-      <button style="border: solid" (click)="deleteUserByEmail(element.email)">
-        Delete
-      </button>
-      <button mat-raised-button (click)="openDialog(element)">Update</button>
+      <div class="flex gap-[20px] justify-end mr-[20px] text-start">
+        {{ element.role }}
+        <button (click)="openDialog(element)">
+          <img class="w-[20px]" src="assets/icons/pen.svg" />
+        </button>
+        <button (click)="deleteUserByEmail(element.email)">
+          <img
+            class="w-[20px]"
+            src="assets/icons/delete_icon.svg"
+            sizes="20px"
+          />
+        </button>
+      </div>
     </td>
   </ng-container>
   <!--  tr header functalalty -->

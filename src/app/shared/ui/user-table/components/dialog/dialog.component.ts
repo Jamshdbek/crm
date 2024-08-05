@@ -1,5 +1,5 @@
-import { Component, effect, inject, model } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, Inject, effect, inject, model } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {
   MAT_DIALOG_DATA,
@@ -12,6 +12,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DialogData } from '../../../../types/global';
+import { UserItem } from '../../../../types/users.type';
 
 @Component({
   selector: 'app-dialog',
@@ -20,6 +21,7 @@ import { DialogData } from '../../../../types/global';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatDialogTitle,
     MatDialogContent,
@@ -31,13 +33,22 @@ import { DialogData } from '../../../../types/global';
 })
 export class DialogComponent {
   readonly dialogRef = inject(MatDialogRef<DialogComponent>);
-  readonly data = inject<DialogData>(MAT_DIALOG_DATA);
-  readonly formItem = model(this.data);
- constructor(){
-  effect(()=>{
-    console.log(this.formItem, "data")
-  })
- }
+   @Inject(MAT_DIALOG_DATA) public dialogData: any;
+
+  // public formData = new FormGroup({
+  //   name: new FormControl(this.dialogData.userData.name),
+  // });
+  // public userData = {}
+  constructor() {
+    // effect(() => {
+    //   console.log(this.dialogData, 'data');
+    // });
+  }
+
+  onSubmit(event:any) {
+    console.log(event)
+
+  }
   onNoClick(): void {
     this.dialogRef.close();
   }

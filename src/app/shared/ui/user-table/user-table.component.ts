@@ -46,22 +46,18 @@ export class UserTableComponent implements OnChanges {
   public displayedColumns: string[] = ['name', 'email', 'status', 'role'];
 
   // modal dialog
-  readonly animal = signal('');
+  readonly data = signal('');
   readonly dialog = inject(MatDialog);
 
   // end modal dialog
-  @Input()
-  public usersData: Observable<UserItem[]> = new Observable<UserItem[]>();
+  @Input() usersData: Observable<UserItem[]> = new Observable<UserItem[]>();
 
   @Output() userDeleteId: EventEmitter<string> = new EventEmitter<string>();
 
   //  sourse controllers
   public dataSource = new MatTableDataSource<UserItem>();
 
-  constructor(
-    private _liveAnnouncer: LiveAnnouncer,
-    private store: Store<AppState>
-  ) {}
+  constructor(private _liveAnnouncer: LiveAnnouncer) {}
 
   @ViewChild(MatSort) sort: MatSort = new MatSort();
 
@@ -77,14 +73,14 @@ export class UserTableComponent implements OnChanges {
     const dialogRef = this.dialog.open(DialogComponent, {
       backdropClass: 'custom-dialog-backdrop',
       panelClass: 'custom-dialog',
-      data: { userData: data  },
+      data: { userData: data },
     });
 
-    // end
+    // change data
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
       if (result !== undefined) {
-        this.animal.set(result);
+        this.data.set(result);
       }
     });
   }
