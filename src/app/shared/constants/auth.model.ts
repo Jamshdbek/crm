@@ -1,6 +1,4 @@
-import { UserAuthFieldTypes } from '../types/auth';
 
-export const initialUserValue: UserAuthFieldTypes = {
-  username: '',
-  password: '',
+export const initialUserValue: any = {
+ user:{}
 };
